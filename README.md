@@ -9,7 +9,7 @@ Stock market prediction is a challenging yet crucial task for investors and fina
 
 Data Collection: Historical stock data for Starbucks Corporation (SBUX) was collected from NASDAQ, covering the period from September 11, 2024, to March 10, 2025. The dataset included features such as Date, Close/Last, Volume, Open, High, and Low.
 
-Data Preprocessing:
+### Data Preprocessing:
 
 The 'Close/Last' column was converted from string to numeric format by removing '$' symbols and commas.
 
@@ -17,14 +17,12 @@ The 'Date' column was converted to datetime objects and set as the index.
 
 Only the 'Close/Last' column (representing the closing stock price of the day) was considered for analysis.
 
-A line plot was generated to visualize the stock price trend over time.
-
 The data was normalized using MinMaxScaler from the Scikit-learn library, scaling values between -1 and 1 to improve training efficiency.
 
 Sequential time series data was created with a timestep of 30 (to capture previous 30 days' prices) and a forecast length of 3 (to predict prices for the next 3 days).
 
 
-Model Development:
+### Model Development:
 
 The dataset was split into training and testing sets with an 80:20 ratio.
 
@@ -38,7 +36,7 @@ Each model's final layer was a Dense layer designed to output three predicted pr
 
 Models were compiled using Mean Squared Error (MSE) as the loss function and Adam as the optimizer.
 
-Model Training and Evaluation:
+### Model Training and Evaluation:
 
 Each model was trained for 100 epochs with a batch size of 32.
 
@@ -48,7 +46,7 @@ Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).
 
 Predicted values were inverse-transformed to their original stock price levels.
 
-Prediction and Interpretation:
+### Prediction and Interpretation:
 
 The trained models were used to predict the next three stock prices based on the most recent data sequence.
 
